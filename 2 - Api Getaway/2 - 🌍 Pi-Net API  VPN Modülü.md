@@ -7,7 +7,7 @@
 > - `10.42.0.1` → Pi'nin hotspot modundaki sabit IP'si
 > - `8000` → API'nin çalıştığı port
 
-> [!note] Ön koşul: Bu not, [[🧩 Raspberry Pi — Pi-Net API  Omurga ve Sistem İzleme]] notundaki adımların tamamlanmış olduğu varsayımıyla ilerler.
+> [!note] Ön koşul: Bu not, [[1 - 🧩 Pi-Net API  Omurga ve Sistem İzleme]] notundaki adımların tamamlanmış olduğu varsayımıyla ilerler.
 
 > [!tip] Devamı var: Bu notta VPN kontrol modülü yazılır. Servisi systemd olarak kurup çalışır hale getirmek için yapılacaklar üçüncü nottadır 
 

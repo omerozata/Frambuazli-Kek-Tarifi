@@ -7,7 +7,7 @@
 > - `10.42.0.1` → Pi'nin hotspot modundaki sabit IP'si
 > - `8000` → API'nin çalıştığı port
 
-> [!note] Ön koşul: Bu kurulum, [[📡 Raspberry Pi — Router Kurulum Notları]] tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
+> [!note] Ön koşul: Bu kurulum, [[1- 📡  Router Kurulum Notları]] tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
 
 > [!tip] Devamı var: Bu notta API'nin omurgası kurulur ve sistem izleme modülü eklenir. VPN modülü, servis dosyası ve kullanıcı yetkilendirmesi diğer notlarda kuruluyor — Bütün modüller tamamlanmadan sistemi ayağa kaldırmıyoruz.
 

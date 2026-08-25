@@ -1,6 +1,6 @@
 
-
-> [!info] Değiştirilebilir alanlar Bu notta geçen aşağıdaki değerler **senin ortamına özel** — her yerde arayıp güncel değerle değiştir:
+> [!NOTE] 
+>  ##### Değiştirilebilir alanlar: Bu notta geçen aşağıdaki değerler **senin ortamına özel** — her yerde arayıp güncel değerle değiştir:
 > 
 > - `omero` → kullanıcı adı
 > - `10.77.191.37` → cihazın ilk IP adresi (ağ değişebilir)
@@ -12,7 +12,8 @@
 
 ## 1 - Pi Imager ile Kurulum
 
-> [!tip] Kurulum Ayarları
+> [!TIP]
+> ##### Kurulum Ayarları
 > - Cihaz: Rasperry Pi 4
 > - İşletim Sistemi: Other → Pi OS Lite 64 bit
 > - Depolama: micro sd kart
@@ -23,7 +24,6 @@
 > - SSH Etkinleştir (parola doğrulaması ile)
 > - Pi Connect: gerek yok
 >
-
 
 Linux'ta doğrulama adımı hata verirse **doğrulamayı atla**.
 

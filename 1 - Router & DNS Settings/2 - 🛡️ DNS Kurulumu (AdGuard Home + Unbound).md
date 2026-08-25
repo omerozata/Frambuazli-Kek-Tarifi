@@ -1,7 +1,7 @@
 
 
 > [!note] Ön Koşul:
-> Bu kurulum,  [[📡 Raspberry Pi — Router Kurulum Notları]]  tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
+> Bu kurulum,  [[1- 📡  Router Kurulum Notları]]  tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
 
 ---
 ## 0 - CasaOS Kurulumu

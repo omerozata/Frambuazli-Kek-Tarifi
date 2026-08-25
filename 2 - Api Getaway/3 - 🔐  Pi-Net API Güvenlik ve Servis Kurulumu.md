@@ -6,7 +6,7 @@
 > - `pinet` → API servisi için oluşturulacak kısıtlı sistem kullanıcısının adı
 > - `/home/omero/pinet-api` → proje klasörünün tam yolu (systemd göreli yol kabul etmez)
 
-> [!note] Ön koşul: Bu adımların uygulanabilmesi için [[🧩 Raspberry Pi — Pi-Net API  Omurga ve Sistem İzleme]] ile [[🌍 Raspberry Pi — Pi-Net API  VPN Modülü]] notları tamamlanmış olmalı.
+> [!note] Ön koşul: Bu adımların uygulanabilmesi için [[1 - 🧩 Pi-Net API  Omurga ve Sistem İzleme]] ile [[2 - 🌍 Pi-Net API  VPN Modülü]] notları tamamlanmış olmalı.
 
 > [!tip] Bu notta ne yapılıyor: API'yi çalıştıracak, sadece `nmcli` komutunu çalıştırmaya yetkili, kısıtlı bir sistem kullanıcısı oluşturuluyor; ardından servis bu kullanıcıyla systemd üzerinden kalıcı hale getiriliyor. API hiçbir aşamada `root` olarak çalışmıyor.
 
