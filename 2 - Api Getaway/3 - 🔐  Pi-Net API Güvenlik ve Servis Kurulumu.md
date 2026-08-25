@@ -1,14 +1,18 @@
 
 
-> [!info] Değiştirilebilir alanlar
+> [!NOTE] 
+> ### Değiştirilebilir alanlar
 > 
 > - `omero` → kullanıcı adı
 > - `pinet` → API servisi için oluşturulacak kısıtlı sistem kullanıcısının adı
 > - `/home/omero/pinet-api` → proje klasörünün tam yolu (systemd göreli yol kabul etmez)
 
-> [!note] Ön koşul: Bu adımların uygulanabilmesi için [[1 - 🧩 Pi-Net API  Omurga ve Sistem İzleme]] ile [[2 - 🌍 Pi-Net API  VPN Modülü]] notları tamamlanmış olmalı.
+> [!NOTE] 
+> ##### Ön koşul: 
+> Bu adımların uygulanabilmesi için [[1 - 🧩 Pi-Net API  Omurga ve Sistem İzleme]] ile [[2 - 🌍 Pi-Net API  VPN Modülü]] notları tamamlanmış olmalı.
 
-> [!tip] Bu notta ne yapılıyor: API'yi çalıştıracak, sadece `nmcli` komutunu çalıştırmaya yetkili, kısıtlı bir sistem kullanıcısı oluşturuluyor; ardından servis bu kullanıcıyla systemd üzerinden kalıcı hale getiriliyor. API hiçbir aşamada `root` olarak çalışmıyor.
+> [!IMPORTANT] 
+> Bu notta ne yapılıyor: API'yi çalıştıracak, sadece `nmcli` komutunu çalıştırmaya yetkili, kısıtlı bir sistem kullanıcısı oluşturuluyor; ardından servis bu kullanıcıyla systemd üzerinden kalıcı hale getiriliyor. API hiçbir aşamada `root` olarak çalışmıyor.
 
 ---
 
@@ -30,12 +34,11 @@ sudo chmod 600 /home/omero/pinet-api/.env
 ```
 
 
->[!attention] Eğer permission hatası alınırsa ek bir izin vermek gerekebilir. Bu izin `omero` klasörünü, içinden geçilebilir yapar. Klasörün içindeki dosyalar listelenemez veya başka hiçbir yetkiyi etkilemez. Sadece `pinet` kullanıcısının bu yoldan geçip kendi klasörüne ulaşabilmesini sağlar:
+>[!WARNING] 
+>Eğer permission hatası alınırsa ek bir izin vermek gerekebilir. Bu izin `omero` klasörünü, içinden geçilebilir yapar. Klasörün içindeki dosyalar listelenemez veya başka hiçbir yetkiyi etkilemez. Sadece `pinet` kullanıcısının bu yoldan geçip kendi klasörüne ulaşabilmesini sağlar:
 >```bash
 sudo chmod o+x /home/omero
 > ```
-
-
 
 
 ---
@@ -71,7 +74,8 @@ sudo chmod 440 /etc/sudoers.d/pinet-api
 sudo visudo -c
 ```
 
-> [!danger] Hata görürsen `visudo -c` çıktısında hata görürsen dosyayı sil ve tekrar dene:
+> [!CAUTION] 
+> Hata görürsen `visudo -c` çıktısında hata görürsen dosyayı sil ve tekrar dene:
 > 
 > ```bash
 > sudo rm /etc/sudoers.d/pinet-api
@@ -130,7 +134,8 @@ PrivateTmp=true
 WantedBy=multi-user.target
 ```
 
-> [!note] `ProtectSystem` / `ProtectHome` ne işe yarar `ProtectSystem=strict`, `/`, `/usr`, `/boot` gibi sistem dizinlerini salt-okunur yapar; sadece `ReadWritePaths` ile belirtilen yerlere (`/tmp`) yazılabilir. `ProtectHome=read-only`, `/home` altındaki dosyalara (proje klasörü dahil) yazma izni vermez — servis kendi kodunu değiştiremez. Bu iki satır, API'de bir açık bulunsa dahi sistemin geri kalanının korunmasını sağlar.
+> [!NOTE] 
+> `ProtectSystem` / `ProtectHome` ne işe yarar `ProtectSystem=strict`, `/`, `/usr`, `/boot` gibi sistem dizinlerini salt-okunur yapar; sadece `ReadWritePaths` ile belirtilen yerlere (`/tmp`) yazılabilir. `ProtectHome=read-only`, `/home` altındaki dosyalara (proje klasörü dahil) yazma izni vermez — servis kendi kodunu değiştiremez. Bu iki satır, API'de bir açık bulunsa dahi sistemin geri kalanının korunmasını sağlar.
 
 ---
 
@@ -143,7 +148,8 @@ sudo systemctl start pinet-api
 sudo systemctl status pinet-api
 ```
 
-> [!tip] Durum ekranından çıkmak için `q` tuşuna bas.
+> [!IMPORTANT] 
+> Durum ekranından çıkmak için `q` tuşuna bas.
 
 Canlı logları izlemek için:
 
@@ -175,7 +181,8 @@ http://10.42.0.1:8000/docs
 
 Sağ üstteki **Authorize** butonuna tıklayıp `.env` dosyandaki `API_KEY` değerini gir — böylece tüm korumalı endpoint'leri buradan deneyebilirsin.
 
-> [!tip] Bir şeyler ters giderse `Permission denied` gibi bir hata görürsen adım 1'deki `chown` komutunu, ya da adım 2'deki sudoers kuralını tekrar kontrol et. Loglardaki (`journalctl -u pinet-api -f`) hata mesajı genelde sorunun tam olarak nerede olduğunu gösterir.
+> [!IMPORTANT] 
+> Bir şeyler ters giderse `Permission denied` gibi bir hata görürsen adım 1'deki `chown` komutunu, ya da adım 2'deki sudoers kuralını tekrar kontrol et. Loglardaki (`journalctl -u pinet-api -f`) hata mesajı genelde sorunun tam olarak nerede olduğunu gösterir.
 
 ---
 

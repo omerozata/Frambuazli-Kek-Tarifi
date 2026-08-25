@@ -1,6 +1,6 @@
 
-
-> [!note] Ön Koşul:
+> [!NOTE] 
+> #### Ön Koşul:
 > Bu kurulum,  [[1- 📡  Router Kurulum Notları]]  tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
 
 ---
@@ -77,7 +77,9 @@ sudo systemctl restart unbound
 
 ## 3 - Koltuk Savaşları (Port 53 Çakışması)
 
-> [!warning] Neden gerekli? Pi üzerinde birden fazla servis (NetworkManager, dnsmasq, Unbound, AdGuard) aynı anda **port 53**'ü kullanmak isteyebilir. Bu bölüm, port 53'ü tamamen AdGuard Home'a bırakıp diğerlerini devre dışı bırakır. İnatla koltuğu işgal edenleri indirip internetin cumhurbaşkanlığı koltuğuna gerçekten hizmet edecek adamı koyuyoruz...
+> [!WARNING] 
+> #### Neden gerekli
+> Pi üzerinde birden fazla servis (NetworkManager, dnsmasq, Unbound, AdGuard) aynı anda **port 53**'ü kullanmak isteyebilir. Bu bölüm, port 53'ü tamamen AdGuard Home'a bırakıp diğerlerini devre dışı bırakır. İnatla koltuğu işgal edenleri indirip internetin cumhurbaşkanlığı koltuğuna gerçekten hizmet edecek adamı koyuyoruz...
 
 ### 3.1 - NetworkManager'ın DNS Yönetimini Kapat
 
@@ -134,10 +136,12 @@ http://10.42.0.1:3000
 |Admin Web Interface|`8080`|Port `80` **değil** — orada CasaOS çalışıyor|
 |DNS server port|`53`|Kesinlikle bu — port 53 için verilen tüm savaş bu ayar için|
 
-> [!warning] Sihirbazda başka ayar değiştirme Yukarıdaki iki port dışında hiçbir şeye dokunma. Kullanıcı adı ve şifreni gir, kurulumu tamamla.
+> [!WARNING] 
+> Sihirbazda başka ayar değiştirme Yukarıdaki iki port dışında hiçbir şeye dokunma. Kullanıcı adı ve şifreni gir, kurulumu tamamla.
 
 ---
-> [!note] Artık Adguard paneline http://10.42.0.1:8080 adresinden ulaşabilirsin.
+> [!IMPORTANT] 
+> Artık Adguard paneline http://10.42.0.1:8080 adresinden ulaşabilirsin.
 
 ---
 

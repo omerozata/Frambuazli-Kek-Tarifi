@@ -1,5 +1,6 @@
 
-> [!info] Değiştirilebilir alanlar (Tüm ilgili notlar için)
+> [!NOTE] 
+> ### Değiştirilebilir alanlar (Tüm ilgili notlar için)
 > 
 > - `omero` → kullanıcı adı
 > - `pinet` → API servisi için oluşturulacak kısıtlı sistem kullanıcısının adı
@@ -7,9 +8,13 @@
 > - `10.42.0.1` → Pi'nin hotspot modundaki sabit IP'si
 > - `8000` → API'nin çalıştığı port
 
-> [!note] Ön koşul: Bu not, [[1 - 🧩 Pi-Net API  Omurga ve Sistem İzleme]] notundaki adımların tamamlanmış olduğu varsayımıyla ilerler.
+> [!NOTE] 
+> ##### Ön koşul: 
+> Bu not, [[1 - 🧩 Pi-Net API  Omurga ve Sistem İzleme]] notundaki adımların tamamlanmış olduğu varsayımıyla ilerler.
 
-> [!tip] Devamı var: Bu notta VPN kontrol modülü yazılır. Servisi systemd olarak kurup çalışır hale getirmek için yapılacaklar üçüncü nottadır 
+> [!IMPORTANT] 
+> ##### Devamı var: 
+> Bu notta VPN kontrol modülü yazılır. Servisi systemd olarak kurup çalışır hale getirmek için yapılacaklar üçüncü nottadır 
 
 ---
 
@@ -205,7 +210,8 @@ async def connection_import_wireguard(file_path: str, timeout: int) -> NmcliResu
     )
 ```
 
-> [!info] `sudo -n` ne işe yarar? `-n` (non-interactive) bayrağı, sudo'nun bir şifre sormaya çalışıp süresiz beklemesini engeller; yetki doğru tanımlanmadıysa komut hemen hata verir. Bu yetkinin nasıl güvenli şekilde (root vermeden, sadece `nmcli`'ye özel) tanımlanacağı bir sonraki notta.
+> [!TIP] 
+> `sudo -n` ne işe yarar? `-n` (non-interactive) bayrağı, sudo'nun bir şifre sormaya çalışıp süresiz beklemesini engeller; yetki doğru tanımlanmadıysa komut hemen hata verir. Bu yetkinin nasıl güvenli şekilde (root vermeden, sadece `nmcli`'ye özel) tanımlanacağı bir sonraki notta.
 
 ---
 
@@ -406,5 +412,6 @@ async def delete_vpn(body: VpnDeleteRequest, settings: Settings = Depends(get_se
 ```
 
 
-> [!tip] VPN modülü artık `main.py` içinde import edildiği tam haliyle çalışabilir durumda. Ancak servisi başlatmadan önce, `nmcli`'nin root gerektiren komutlarını (yukarıdaki `sudo -n` çağrıları) çalıştırabilmesi için doğru kullanıcı ve yetki yapılandırmasının kurulması gerekiyor. Bu adım ve systemd servisinin kurulumu sıradaki notta.
+> [!IMPORTANT] 
+> VPN modülü artık `main.py` içinde import edildiği tam haliyle çalışabilir durumda. Ancak servisi başlatmadan önce, `nmcli`'nin root gerektiren komutlarını (yukarıdaki `sudo -n` çağrıları) çalıştırabilmesi için doğru kullanıcı ve yetki yapılandırmasının kurulması gerekiyor. Bu adım ve systemd servisinin kurulumu sıradaki notta.
 

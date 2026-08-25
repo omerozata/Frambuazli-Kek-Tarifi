@@ -43,9 +43,11 @@ cihazın adı ve telefona bağlı ip adresi
 ssh omero@10.77.191.37
 ```
 
-> [!tip] Bağlanırken `yes` de ve ardından şifreni gir.
+> [!TIP] 
+> Bağlanırken `yes` de ve ardından şifreni gir.
 
-> [!warning] Host key hatası: Aynı cihaza yeniden kurulum yaptıysan (aynı IP, yeni SSH anahtarı) bağlantı **host key** hatası verebilir. Bu durumda önce parmak izini sıfırla:
+> [!WARNING] 
+> Host key hatası: Aynı cihaza yeniden kurulum yaptıysan (aynı IP, yeni SSH anahtarı) bağlantı **host key** hatası verebilir. Bu durumda önce parmak izini sıfırla:
 > 
 > ```bash
 > ssh-keygen -R 10.77.191.37
@@ -70,9 +72,11 @@ sudo nmcli device wifi hotspot ifname wlan0 ssid frambuazlikek password "1234567
 ssh omero@10.42.0.1
 ```
 
-> [!note] Sabit IP Hotspot modundayken Pi'nin IP'si her zaman `10.42.0.1` olur.
+> [!NOTE] 
+> Sabit IP Hotspot modundayken Pi'nin IP'si her zaman `10.42.0.1` olur.
 
-> [!warning] Yine host key hatası alırsan
+> [!WARNING] 
+> Yine host key hatası alırsan
 > 
 > ```bash
 > ssh-keygen -R 10.42.0.1
@@ -82,9 +86,11 @@ ssh omero@10.42.0.1
 
 ## 3 Buçuk - Şifresiz Bağlanmak İçin SSH Key
 
-> [!note] Bu ayar kendi bilgisayarının terminalinde yapılacak. Terminalde `exit` diyerek ssh bağlantısından çıkabilirsin.
+> [!NOTE] 
+> Bu ayar kendi bilgisayarının terminalinde yapılacak. Terminalde `exit` diyerek ssh bağlantısından çıkabilirsin.
 
-> [!danger] Bu bilgisayarında sadece tek seferlik oluşturulması gereken bir anahtar. Geçmişte başka bir sebeple oluşturduysan override yapma. Diğer adımla devam et.
+> [!CAUTION] 
+> Bu bilgisayarında sadece tek seferlik oluşturulması gereken bir anahtar. Geçmişte başka bir sebeple oluşturduysan override yapma. Diğer adımla devam et.
 > 
 > ```bash
 > ssh-keygen -t ed25519
@@ -110,8 +116,8 @@ HostName 10.42.0.1
 User omero
 ```
 
-
-> [!success] Artık `ssh raspi` yazarak içeri girebilirsin 
+> [!TIP] 
+> Artık `ssh raspi` yazarak içeri girebilirsin 
 
 ---
 
@@ -274,7 +280,8 @@ Profili bir kereliğine elle başlat:
 sudo nmcli connection up TelefonKablo
 ```
 
-> [!warning] Ayar değiştirince Hotspot'u baştan başlatman gerekir, bağlantı kısa süreliğine gidip gelir:
+> [!WARNING] 
+> Ayar değiştirince Hotspot'u baştan başlatman gerekir, bağlantı kısa süreliğine gidip gelir:
 > 
 > ```bash
 > sudo nmcli connection up Hotspot

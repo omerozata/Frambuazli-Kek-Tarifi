@@ -1,5 +1,6 @@
 
-> [!info] Değiştirilebilir alanlar (Tüm ilgili notlar için)
+> [!NOTE] 
+> ### Değiştirilebilir alanlar (Tüm ilgili notlar için)
 > 
 > - `omero` → kullanıcı adı
 > - `pinet` → API servisi için oluşturulacak kısıtlı sistem kullanıcısının adı
@@ -7,9 +8,13 @@
 > - `10.42.0.1` → Pi'nin hotspot modundaki sabit IP'si
 > - `8000` → API'nin çalıştığı port
 
-> [!note] Ön koşul: Bu kurulum, [[1- 📡  Router Kurulum Notları]] tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
+> [!NOTE] 
+> ##### Ön koşul: 
+> Bu kurulum, [[1- 📡  Router Kurulum Notları]] tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
 
-> [!tip] Devamı var: Bu notta API'nin omurgası kurulur ve sistem izleme modülü eklenir. VPN modülü, servis dosyası ve kullanıcı yetkilendirmesi diğer notlarda kuruluyor — Bütün modüller tamamlanmadan sistemi ayağa kaldırmıyoruz.
+> [!IMPORTANT] 
+> ##### Devamı var: 
+> Bu notta API'nin omurgası kurulur ve sistem izleme modülü eklenir. VPN modülü, servis dosyası ve kullanıcı yetkilendirmesi diğer notlarda kuruluyor — Bütün modüller tamamlanmadan sistemi ayağa kaldırmıyoruz.
 
 ---
 
@@ -46,7 +51,8 @@ pip install fastapi uvicorn python-multipart psutil pydantic-settings
 pip freeze > requirements.txt
 ```
 
-> [!tip] Bonus — Sanal Ortama Girmek İçin Kısayol
+> [!TIP] 
+> ##### Bonus — Sanal Ortama Girmek İçin Kısayol
 > 
 > ```bash
 > nano ~/.bashrc
@@ -126,7 +132,8 @@ cat .env
 
 Bu değeri not al — Yönetim panellerinde her istekte `X-API-Key` header'ına bunu yazacaksın.
 
-> [!warning] .env dosyasını asla paylaşma Git'e commit etme, ekran görüntüsü paylaşma, hiçbir yere yapıştırma. Bu değer sızarsa sisteme dışarıdan tam kontrol demektir.
+> [!CAUTION] 
+> .env dosyasını asla paylaşma Git'e commit etme, ekran görüntüsü paylaşma, hiçbir yere yapıştırma. Bu değer sızarsa sisteme dışarıdan tam kontrol demektir.
 
 `.gitignore` dosyasını oluştur:
 
@@ -458,4 +465,5 @@ def read_root():
     }
 ```
 
-> [!abstract] VPN router'ı henüz yazılmadı. Yukarıdaki dosya `app.routers` içinden `vpn`'i de import ediyor ama bu modül bir sonraki notta yazılacak. Bu yüzden `main.py` şu an tek başına çalıştırılamaz — devam eden nottaki adımları tamamladıktan sonra test edilecek. Servisi systemd olarak kurmak da üçüncü notun konusu.
+> [!IMPORTANT] 
+> VPN router'ı henüz yazılmadı. Yukarıdaki dosya `app.routers` içinden `vpn`'i de import ediyor ama bu modül bir sonraki notta yazılacak. Bu yüzden `main.py` şu an tek başına çalıştırılamaz — devam eden nottaki adımları tamamladıktan sonra test edilecek. Servisi systemd olarak kurmak da üçüncü notun konusu.
