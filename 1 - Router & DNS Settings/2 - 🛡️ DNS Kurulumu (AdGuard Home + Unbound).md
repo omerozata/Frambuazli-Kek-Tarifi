@@ -1,7 +1,7 @@
 
 > [!NOTE] 
 > #### Ön Koşul:
-> Bu kurulum,  [[1- 📡  Router Kurulum Notları]]  tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
+> Bu kurulum, router ayarları tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
 
 ---
 ## 0 - CasaOS Kurulumu
@@ -135,6 +135,7 @@ http://10.42.0.1:3000
 |---|---|---|
 |Admin Web Interface|`8080`|Port `80` **değil** — orada CasaOS çalışıyor|
 |DNS server port|`53`|Kesinlikle bu — port 53 için verilen tüm savaş bu ayar için|
+
 
 > [!WARNING] 
 > Sihirbazda başka ayar değiştirme Yukarıdaki iki port dışında hiçbir şeye dokunma. Kullanıcı adı ve şifreni gir, kurulumu tamamla.

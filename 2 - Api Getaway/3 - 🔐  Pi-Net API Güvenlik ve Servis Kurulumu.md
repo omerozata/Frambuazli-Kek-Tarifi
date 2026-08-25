@@ -7,9 +7,6 @@
 > - `pinet` → API servisi için oluşturulacak kısıtlı sistem kullanıcısının adı
 > - `/home/omero/pinet-api` → proje klasörünün tam yolu (systemd göreli yol kabul etmez)
 
-> [!NOTE] 
-> ##### Ön koşul: 
-> Bu adımların uygulanabilmesi için [[1 - 🧩 Pi-Net API  Omurga ve Sistem İzleme]] ile [[2 - 🌍 Pi-Net API  VPN Modülü]] notları tamamlanmış olmalı.
 
 > [!IMPORTANT] 
 > Bu notta ne yapılıyor: API'yi çalıştıracak, sadece `nmcli` komutunu çalıştırmaya yetkili, kısıtlı bir sistem kullanıcısı oluşturuluyor; ardından servis bu kullanıcıyla systemd üzerinden kalıcı hale getiriliyor. API hiçbir aşamada `root` olarak çalışmıyor.
@@ -36,9 +33,12 @@ sudo chmod 600 /home/omero/pinet-api/.env
 
 >[!WARNING] 
 >Eğer permission hatası alınırsa ek bir izin vermek gerekebilir. Bu izin `omero` klasörünü, içinden geçilebilir yapar. Klasörün içindeki dosyalar listelenemez veya başka hiçbir yetkiyi etkilemez. Sadece `pinet` kullanıcısının bu yoldan geçip kendi klasörüne ulaşabilmesini sağlar:
+>
 >```bash
 sudo chmod o+x /home/omero
 > ```
+
+
 
 
 ---

@@ -57,7 +57,7 @@ Bu bölüm, Pi-Net API'nin sunduğu tüm uç noktaların (endpoint) resmi refera
 X-API-Key: <anahtar>
 ```
 
-Anahtar eksikse `401`, yanlışsa `403` döner (bkz. [Hata Cevapları](https://claude.ai/chat/fa19508c-a0bc-4a75-9f76-72fa2802e215#hata-cevaplar%C4%B1)).
+Anahtar eksikse `401`, yanlışsa `403` döner.
 
 ### İnteraktif Dokümantasyon
 

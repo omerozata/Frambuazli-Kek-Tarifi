@@ -10,7 +10,7 @@
 
 > [!NOTE] 
 > ##### Ön koşul: 
-> Bu kurulum, [[1- 📡  Router Kurulum Notları]] tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
+> Bu kurulum, Router ayarları tamamlanmış ve Pi hotspot olarak çalışıyor varsayımıyla ilerler.
 
 > [!IMPORTANT] 
 > ##### Devamı var: 
